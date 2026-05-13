@@ -9,7 +9,6 @@ import {
   Users,
   Target,
   Mail,
-  Phone,
   Map,
   Menu,
   X,
@@ -673,7 +672,15 @@ export default function App() {
                 ))}
               </ul>
 
-              <button className="w-full md:w-auto px-8 py-3.5 bg-[#ad8513] hover:bg-[#ad8513] text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-[#0f3730]/50 flex items-center justify-center gap-2">
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://docs.google.com/forms/d/e/1FAIpQLScqo8QvSx0OgkAA4pC9NuqnjmT5wvBijDb8H6tCV0EvE6WRkQ/viewform",
+                    "_blank"
+                  )
+                }
+                className="w-full md:w-auto px-8 py-3.5 bg-[#ad8513] hover:bg-[#ad8513] text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-[#0f3730]/50 flex items-center justify-center gap-2"
+              >
                 Garantir Vaga Gratuitamente <ChevronRight size={18} />
               </button>
 
@@ -834,23 +841,6 @@ export default function App() {
                       className="text-sm text-slate-400 hover:text-[#b8973a] transition-colors"
                     >
                       contato@simposiodor2026.com.br
-                    </a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Phone
-                    size={20}
-                    className="text-[#b8973a] flex-shrink-0 mt-0.5"
-                  />
-                  <div>
-                    <span className="block text-sm font-medium text-white">
-                      WhatsApp (Suporte)
-                    </span>
-                    <a
-                      href="tel:+5531999999999"
-                      className="text-sm text-slate-400 hover:text-[#b8973a] transition-colors"
-                    >
-                      (31) 99999-9999
                     </a>
                   </div>
                 </li>
