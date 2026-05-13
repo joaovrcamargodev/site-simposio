@@ -404,17 +404,11 @@ export default function App() {
               className="flex-shrink-0 flex items-center cursor-pointer"
               onClick={() => scrollToSection("home")}
             >
-              <div className="w-10 h-10 bg-[#1a5c52] rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">SM</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-[#1e2d5a] leading-tight">
-                  Simpósio Mineiro
-                </span>
-                <span className="text-xs text-slate-500 font-medium tracking-wider uppercase">
-                  Dor Crônica 2026
-                </span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Simpodor"
+                className="h-12 w-12 rounded-full object-cover mr-3"
+              />
             </div>
 
             <div className="hidden md:flex space-x-8 items-center">
@@ -512,16 +506,21 @@ export default function App() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center space-x-2 bg-[#0f3730]/50 border border-[#b8973a]/30 text-[#b8973a] px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
-            <Calendar size={16} />
-            <span>29 de Maio de 2026</span>
-            <span className="w-1 h-1 bg-[#b8973a] rounded-full mx-2"></span>
-            <Clock size={16} />
-            <span>16:00h</span>
-            <span className="w-1 h-1 bg-[#b8973a] rounded-full mx-2"></span>
-
-            <MapPin size={16} />
-            <span>Belo Horizonte, MG</span>
+          <div className="inline-flex flex-wrap justify-center items-center gap-x-3 gap-y-2 bg-[#0f3730]/50 border border-[#b8973a]/30 text-[#b8973a] px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+            <span className="flex items-center gap-1">
+              <Calendar size={16} />
+              29 de Maio de 2026
+            </span>
+            <span className="w-1 h-1 bg-[#b8973a] rounded-full hidden sm:block"></span>
+            <span className="flex items-center gap-1">
+              <Clock size={16} />
+              16:00h
+            </span>
+            <span className="w-1 h-1 bg-[#b8973a] rounded-full hidden sm:block"></span>
+            <span className="flex items-center gap-1">
+              <MapPin size={16} />
+              Belo Horizonte, MG
+            </span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
@@ -765,9 +764,7 @@ export default function App() {
             {/* Info */}
             <div>
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-[#1a5c52] rounded-lg flex items-center justify-center mr-3">
-                  <span className="text-white font-bold text-xl">SM</span>
-                </div>
+                <img src="/logo.png" alt="Logo" className="h-10 mr-3" />
                 <div className="flex flex-col">
                   <span className="font-bold text-white leading-tight">
                     Simpósio Mineiro
