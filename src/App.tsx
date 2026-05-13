@@ -10,8 +10,6 @@ import {
   Target,
   Mail,
   Phone,
-  Instagram,
-  Linkedin,
   Map,
   Menu,
   X,
