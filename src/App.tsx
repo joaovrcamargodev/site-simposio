@@ -32,13 +32,15 @@ interface TimeBlockProps {
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ title, subtitle }) => (
   <div className="text-center mb-16">
-    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-[#1e2d5a] mb-4">
       {title}
     </h2>
     {subtitle && (
       <p className="text-lg text-slate-600 max-w-2xl mx-auto">{subtitle}</p>
     )}
-    <div className="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+    <div
+      style={{ background: "linear-gradient(90deg, #b8973a, #1a5c52)" }}
+    ></div>
   </div>
 );
 
@@ -76,11 +78,11 @@ const Countdown: React.FC = () => {
   }, []);
 
   const TimeBlock: React.FC<TimeBlockProps> = ({ value, label }) => (
-    <div className="flex flex-col items-center p-3 sm:p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+    <div className="flex flex-col items-center p-3 sm:p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-[#b8973a]">
       <span className="text-2xl sm:text-4xl font-bold text-white mb-1">
         {value.toString().padStart(2, "0")}
       </span>
-      <span className="text-xs sm:text-sm text-blue-100 uppercase tracking-wider">
+      <span className="text-xs sm:text-sm text-[#b8973a] uppercase tracking-wider">
         {label}
       </span>
     </div>
@@ -293,17 +295,17 @@ const PalestranteCard: React.FC<{ palestrante: Palestrante }> = ({
     .toUpperCase();
 
   return (
-    <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 group hover:border-blue-200 transition-colors flex flex-col">
+    <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 group hover:border-[#c5d8d4] transition-colors flex flex-col">
       {/* Cabeçalho */}
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-20 h-20 bg-blue-100 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-sm flex items-center justify-center text-blue-700 font-bold text-xl">
+        <div className="w-20 h-20 bg-[#e8f2ef] rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-sm flex items-center justify-center text-[#1a5c52] font-bold text-xl">
           {initials}
         </div>
         <div>
-          <h4 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-tight">
+          <h4 className="text-xl font-bold text-[#1e2d5a] group-hover:text-[#1a5c52] transition-colors leading-tight">
             {palestrante.name}
           </h4>
-          <p className="text-sm font-medium text-blue-600 mt-0.5">
+          <p className="text-sm font-medium text-[#1a5c52] mt-0.5">
             {palestrante.title}
           </p>
           <p className="text-xs text-slate-500 mt-1 uppercase tracking-wider">
@@ -313,7 +315,7 @@ const PalestranteCard: React.FC<{ palestrante: Palestrante }> = ({
       </div>
 
       {/* Tema */}
-      <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full mb-3 self-start">
+      <span className="inline-block px-3 py-1 bg-[#e8f2ef] text-[#0d2e28] text-xs font-semibold rounded-full mb-3 self-start">
         Tema: {palestrante.theme}
       </span>
 
@@ -325,7 +327,7 @@ const PalestranteCard: React.FC<{ palestrante: Palestrante }> = ({
       {/* Botão expandir */}
       <button
         onClick={() => setOpen(!open)}
-        className="mt-auto flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm text-slate-600 hover:bg-white hover:border-blue-200 hover:text-blue-700 transition-all"
+        className="mt-auto flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm text-slate-600 hover:bg-white hover:border-[#c5d8d4] hover:text-[#1a5c52] transition-all"
       >
         <span>{open ? "Recolher currículo" : "Ver currículo completo"}</span>
         <ChevronRight
@@ -353,7 +355,7 @@ const PalestranteCard: React.FC<{ palestrante: Palestrante }> = ({
                   key={i}
                   className="flex items-start gap-2 text-sm text-slate-600"
                 >
-                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 bg-[#1a5c52] rounded-full mt-1.5 flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -369,7 +371,7 @@ const PalestranteCard: React.FC<{ palestrante: Palestrante }> = ({
                   key={i}
                   className="flex items-start gap-2 text-sm text-slate-600"
                 >
-                  <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 bg-[#1a5c52] rounded-full mt-1.5 flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -404,11 +406,11 @@ export default function App() {
               className="flex-shrink-0 flex items-center cursor-pointer"
               onClick={() => scrollToSection("home")}
             >
-              <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center mr-3">
+              <div className="w-10 h-10 bg-[#1a5c52] rounded-lg flex items-center justify-center mr-3">
                 <span className="text-white font-bold text-xl">SM</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-slate-900 leading-tight">
+                <span className="font-bold text-[#1e2d5a] leading-tight">
                   Simpósio Mineiro
                 </span>
                 <span className="text-xs text-slate-500 font-medium tracking-wider uppercase">
@@ -429,14 +431,14 @@ export default function App() {
                         .replace(/[\u0300-\u036f]/g, "")
                     )
                   }
-                  className="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors"
+                  className="text-sm font-medium text-slate-600 hover:text-[#1a5c52] transition-colors"
                 >
                   {item}
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection("inscricoes")}
-                className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2.5 rounded-md font-medium text-sm transition-colors shadow-sm"
+                className="bg-[#1a5c52] hover:bg-blue-800 text-white px-6 py-2.5 rounded-md font-medium text-sm transition-colors shadow-sm"
               >
                 Garantir Vaga
               </button>
@@ -445,7 +447,7 @@ export default function App() {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-slate-600 hover:text-slate-900"
+                className="text-slate-600 hover:text-[#1e2d5a]"
               >
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -468,7 +470,7 @@ export default function App() {
               ))}
               <button
                 onClick={() => scrollToSection("inscricoes")}
-                className="w-full mt-4 bg-blue-700 text-white px-3 py-3 rounded-md font-medium text-center"
+                className="w-full mt-4 bg-[#1a5c52] text-white px-3 py-3 rounded-md font-medium text-center"
               >
                 Garantir Vaga
               </button>
@@ -480,7 +482,8 @@ export default function App() {
       {/* 1. HERO SECTION */}
       <section
         id="home"
-        className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900"
+        className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#0f3730]"
+        style={{ background: "linear-gradient(135deg, #0f3730, #1e2d5a)" }}
       >
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.4)_0%,transparent_100%)]"></div>
@@ -511,19 +514,21 @@ export default function App() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center space-x-2 bg-blue-900/50 border border-blue-500/30 text-blue-200 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+          <div className="inline-flex items-center space-x-2 bg-[#0f3730]/50 border border-[#b8973a]/30 text-[#b8973a] px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
             <Calendar size={16} />
             <span>29 de Maio de 2026</span>
-            <span className="w-1 h-1 bg-blue-400 rounded-full mx-2"></span>
+            <span className="w-1 h-1 bg-[#b8973a] rounded-full mx-2"></span>
             <Clock size={16} />
             <span>16:00h</span>
+            <span className="w-1 h-1 bg-[#b8973a] rounded-full mx-2"></span>
+
             <MapPin size={16} />
             <span>Belo Horizonte, MG</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
             Simpósio Mineiro de Pesquisa e Prática em{" "}
-            <span className="text-blue-400">Dor Crônica</span>
+            <span className="text-[#b8973a]">Dor Crônica</span>
           </h1>
 
           <p className="mt-4 max-w-2xl mx-auto text-xl md:text-2xl text-slate-300 font-light mb-10">
@@ -533,7 +538,7 @@ export default function App() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <button
               onClick={() => scrollToSection("inscricoes")}
-              className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold text-lg transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 bg-[#ad8513] hover:bg-[#ad8513] text-white rounded-lg font-bold text-lg transition-all shadow-lg shadow-[#0f3730]/50 flex items-center justify-center gap-2"
             >
               Realizar Inscrição <ChevronRight size={20} />
             </button>
@@ -553,10 +558,10 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-14 h-14 bg-[#e8f2ef] text-[#1a5c52] rounded-xl flex items-center justify-center mb-6">
                 <Target size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-bold mb-3 text-[#1e2d5a]">
                 Propósito
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -567,10 +572,10 @@ export default function App() {
             </div>
 
             <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-14 h-14 bg-[#e8f2ef] text-[#1a5c52] rounded-xl flex items-center justify-center mb-6">
                 <Users size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-bold mb-3 text-[#1e2d5a]">
                 Público Alvo
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -581,15 +586,15 @@ export default function App() {
             </div>
 
             <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-14 h-14 bg-[#e8f2ef] text-[#1a5c52] rounded-xl flex items-center justify-center mb-6">
                 <Award size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
+              <h3 className="text-xl font-bold mb-3 text-[#1e2d5a]">
                 Estrutura Científica
               </h3>
               <p className="text-slate-600 leading-relaxed">
                 Programação concentrada em 1 dia presencial, com{" "}
-                <strong className="text-slate-900">
+                <strong className="text-[#1e2d5a]">
                   1 Abertura Institucional e 7 Palestras Magistrais
                 </strong>{" "}
                 elaboradas para gerar alto impacto na sua conduta.
@@ -617,10 +622,11 @@ export default function App() {
       {/* 5. INSCRIÇÕES */}
       <section
         id="inscricoes"
-        className="py-24 bg-slate-900 text-white relative overflow-hidden"
+        className="py-24 bg-[#0f3730] text-white relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #0f3730, #1e2d5a)" }}
       >
         {/* Decorativo */}
-        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-[#1a5c52]/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -636,11 +642,11 @@ export default function App() {
 
           <div className="max-w-xl mx-auto">
             <div className="bg-slate-800 rounded-2xl p-6 md:p-8 border border-slate-700 relative flex flex-col items-center text-center shadow-2xl">
-              <div className="absolute top-0 right-0 bg-blue-600 text-xs font-bold px-3 py-1.5 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">
+              <div className="absolute top-0 right-0 bg-[#1a5c52] text-xs font-bold px-3 py-1.5 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">
                 Vagas Abertas
               </div>
 
-              <div className="w-14 h-14 bg-blue-900/50 text-blue-400 rounded-full flex items-center justify-center mb-4 border border-blue-500/30">
+              <div className="w-14 h-14 bg-[#0f3730]/50 text-[#b8973a] rounded-full flex items-center justify-center mb-4 border border-[#1a5c52]/30">
                 <Award size={28} />
               </div>
 
@@ -663,14 +669,14 @@ export default function App() {
                   >
                     <ShieldCheck
                       size={20}
-                      className="text-blue-400 flex-shrink-0 mt-0.5 md:mt-0"
+                      className="text-[#b8973a] flex-shrink-0 mt-0.5 md:mt-0"
                     />
                     <span className="text-sm md:text-base">{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className="w-full md:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2">
+              <button className="w-full md:w-auto px-8 py-3.5 bg-[#ad8513] hover:bg-[#ad8513] text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-[#0f3730]/50 flex items-center justify-center gap-2">
                 Garantir Vaga Gratuitamente <ChevronRight size={18} />
               </button>
 
@@ -691,7 +697,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
             <div className="flex flex-col justify-center">
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                <h3 className="text-2xl font-bold text-[#1e2d5a] mb-2">
                   EEFFTO - UFMG
                 </h3>
                 <p className="text-slate-600">
@@ -701,11 +707,11 @@ export default function App() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#f0f4f2] text-[#1a5c52] rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900">Endereço</h4>
+                    <h4 className="font-bold text-[#1e2d5a]">Endereço</h4>
                     <p className="text-slate-600 mt-1">
                       Av. Presidente Carlos Luz, 6627
                       <br />
@@ -717,11 +723,11 @@ export default function App() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#f0f4f2] text-[#1a5c52] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Map size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900">
+                    <h4 className="font-bold text-[#1e2d5a]">
                       Acesso e Estacionamento
                     </h4>
                     <p className="text-slate-600 mt-1">
@@ -754,14 +760,14 @@ export default function App() {
       {/* 7. FOOTER & CONTATO */}
       <footer
         id="contato"
-        className="bg-slate-900 pt-16 pb-8 border-t border-slate-800 text-slate-300"
+        className="bg-[#0d2e28] pt-16 pb-8 border-t border-slate-800 text-slate-300"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-b border-slate-800 pb-12">
             {/* Info */}
             <div>
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center mr-3">
+                <div className="w-10 h-10 bg-[#1a5c52] rounded-lg flex items-center justify-center mr-3">
                   <span className="text-white font-bold text-xl">SM</span>
                 </div>
                 <div className="flex flex-col">
@@ -778,20 +784,6 @@ export default function App() {
                 evento feito por e para profissionais dedicados ao tratamento
                 humanizado da dor.
               </p>
-              <div className="flex gap-4">
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors"
-                >
-                  <Linkedin size={20} />
-                </a>
-              </div>
             </div>
 
             {/* Links Rápidos */}
@@ -805,7 +797,6 @@ export default function App() {
                   "Programação",
                   "Palestrantes",
                   "Inscrições",
-                  "Política de Privacidade",
                 ].map((item) => (
                   <li key={item}>
                     <button
@@ -820,7 +811,7 @@ export default function App() {
                       }
                       className="text-slate-400 hover:text-white transition-colors text-sm flex items-center gap-2"
                     >
-                      <ChevronRight size={14} className="text-blue-500" />{" "}
+                      <ChevronRight size={14} className="text-[#b8973a]" />{" "}
                       {item}
                     </button>
                   </li>
@@ -837,7 +828,7 @@ export default function App() {
                 <li className="flex items-start gap-3">
                   <Mail
                     size={20}
-                    className="text-blue-500 flex-shrink-0 mt-0.5"
+                    className="text-[#b8973a] flex-shrink-0 mt-0.5"
                   />
                   <div>
                     <span className="block text-sm font-medium text-white">
@@ -845,7 +836,7 @@ export default function App() {
                     </span>
                     <a
                       href="mailto:contato@simposiodor2026.com.br"
-                      className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                      className="text-sm text-slate-400 hover:text-[#b8973a] transition-colors"
                     >
                       contato@simposiodor2026.com.br
                     </a>
@@ -854,7 +845,7 @@ export default function App() {
                 <li className="flex items-start gap-3">
                   <Phone
                     size={20}
-                    className="text-blue-500 flex-shrink-0 mt-0.5"
+                    className="text-[#b8973a] flex-shrink-0 mt-0.5"
                   />
                   <div>
                     <span className="block text-sm font-medium text-white">
@@ -862,7 +853,7 @@ export default function App() {
                     </span>
                     <a
                       href="tel:+5531999999999"
-                      className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                      className="text-sm text-slate-400 hover:text-[#b8973a] transition-colors"
                     >
                       (31) 99999-9999
                     </a>
